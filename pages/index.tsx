@@ -17,7 +17,7 @@ const Home: NextPage = () => {
             <div className='hidden lg:block text-center lg:pb-12'>
               <Image src='/pink-dot.svg' width={50} height={50}/>
             </div>
-            <div className="font-zen-dots text-primary text-2xl lg:text-6xl">ATHENEADAO</div>
+            <div className="font-zen-dots text-primary text-2xl lg:text-6xl">ATHENADAO</div>
             <div className="font-zen-dots text-secondary text-xl lg:text-4xl pt-12">AUTOMATE YOUR</div>
             <div className="font-zen-dots text-secondary text-xl lg:text-4xl">INVESTMENTS</div>
             <button className="w-fit font-zen-dots mt-12 text-secondary text-m lg:text-m border border-primary rounded-xl background-transparent py-4 px-4" type="button">
