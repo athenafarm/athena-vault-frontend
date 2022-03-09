@@ -1,18 +1,32 @@
+import Link from "next/link";
+import Image from 'next/image'
 import React from "react"
 
 
 const Navbar = ({}) => (
-      <nav className="root bg-background flex flex-row justify-end border-gray-200 px-8 sm:px-16 py-5 dark:bg-gray-800">
-        <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+      <nav className="root bg-background flex flex-row justify-end border-gray-200 px-12 lg:px-12 py-5 dark:bg-gray-800">
+        <div className="w-full sm:block sm:w-auto" id="mobile-menu">
+          <ul className="flex mt-4 sm:flex-row space-x-4 sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium">
             <li>
-              <a href="#" ><img src='/Medium-Logo-White.svg'></img></a>
+              <Link href="#">
+                <a>
+                  <Image src='/Medium-Logo-White.svg' width={50} height={50}/>
+                </a>
+              </Link>
             </li>
             <li>
-              <a href="#" ><img src='/Twitter-Logo-White.svg'></img></a>
+              <Link href="#">
+                <a>
+                  <Image src='/Twitter-Logo-White.svg' width={50} height={50}/>
+                </a>
+              </Link>
             </li>
             <li>
-              <a href="#" ><img src='/Discord-Logo-White.svg'></img></a>
+              <Link href="#">
+                <a>
+                  <Image src='/Discord-Logo-White.svg' width={50} height={50}/>
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
