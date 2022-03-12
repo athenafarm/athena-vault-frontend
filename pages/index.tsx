@@ -1,16 +1,13 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import AthenaHead from '../components/AthenaHead'
 import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>AthenaDAO</title>
-        <link rel="icon" href="/logo.svg" />
-      </Head>
+      <AthenaHead/>
       <Navbar/>
       <div className="flex flex-row">
         <div className="root lg:w-1/2  flex flex-col px-12 py-12 lg:px-24 lg:py-36">
@@ -21,7 +18,9 @@ const Home: NextPage = () => {
             <div className="font-zen-dots text-secondary text-xl lg:text-4xl pt-12">AUTOMATE YOUR</div>
             <div className="font-zen-dots text-secondary text-xl lg:text-4xl">INVESTMENTS</div>
             <button className="w-fit font-zen-dots mt-12 text-secondary text-m lg:text-m border border-primary rounded-xl background-transparent py-4 px-4" type="button">
-              OPEN APP
+              <Link href="/home">
+                <a>OPEN APP</a>
+              </Link>          
             </button>
         </div>
         <div className="root lg:w-1/2 hidden md:flex lg:flex flex-col lg:px-12 lg:py-12 font-medium">
