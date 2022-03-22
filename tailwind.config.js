@@ -20,6 +20,7 @@ module.exports = {
         white: "var(--white)",
         background: "var(--background)",
         header: "var(--header)",
+        banner: "var(--banner)"
       }
     },
   },
