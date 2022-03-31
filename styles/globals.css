@@ -5,23 +5,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   height: 100%;
   width: 100%;
-  background-color: #121E2A;
+  background-color: #121e2a;
 }
 .root,
 #root,
 #docs-root {
-  --primary: #00D7F5;
-  --secondary: #F7AAD4;
-  --tertiary: #3C4858;
+  --primary: #00d7f5;
+  --secondary: #f7aad4;
+  --tertiary: #3c4858;
   --darkgrey: #616161;
   --grey: #979797;
-  --lightgrey: #AEAAAA;
+  --lightgrey: #aeaaaa;
   --white: #fff;
-  --background: #121E2A;
+  --background: #121e2a;
   --banner: #466382;
   --header: #152230;
 }
