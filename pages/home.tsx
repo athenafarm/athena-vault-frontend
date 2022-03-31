@@ -22,15 +22,13 @@ const deposits = [
 ]
 
 const Home: NextPage = () => {
-  const [selectedTab, setSelectedTab] = useState('Home')
   return (
     <div className="root font-inconsolata">
       <AthenaHead />
-      <Header selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+      <Header selectedTab={'Home'} />
       <div className="flex flex-col">
         <h1 className="ml-12 mt-2 text-5xl text-white">My Deposits</h1>
         <div className="mx-12 my-8 rounded-lg bg-tertiary px-12 text-white">
-          {/* Header with Vault, Balance, Earned, APY, and APD */}
           <div className="flex flex-col">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
