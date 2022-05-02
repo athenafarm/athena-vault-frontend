@@ -8,10 +8,10 @@ ENV LCD_URL=$LCD_URL
 # Create app directory
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-
 # node-gyp dependencies
-RUN apk add --update python make g++ git && rm -rf /var/cache/apk/*
+RUN apk add --update --no-cache python3 make g++ && rm -rf /var/cache/apk/*
+
+COPY package*.json ./
 
 # Install dependencies from package-lock.json
 RUN npm ci --no-audit --no-fund
