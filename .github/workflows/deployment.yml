@@ -1,0 +1,80 @@
+name: App Deployment
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main and develop branch
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  DOCKER_IMAGE_TAG: ${{ secrets.REGISTRY }}/${{ secrets.DOCKER_IMAGE }}
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Build and push the app to register 
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
+
+      - name: Checkout files
+        uses: actions/checkout@v2
+
+      - name: Get docker tag
+        id: dockertag
+        uses: Surgo/docker-smart-tag-action@v1
+        with:
+          docker_image: ${{ secrets.DOCKER_IMAGE }}
+          default_branch: ${{ env.GITHUB_REF_SLUG }}
+          tag_with_sha: true
+
+      - name: Docker tags
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          # list of Docker images to use as base name for tags
+          images: ${{ env.DOCKER_IMAGE_TAG }}
+          # generate Docker tags based on the following events/attributes
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix=${{ env.GITHUB_REF_SLUG }}-,format=long
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Login to Digitalocean Container Registry
+        run: doctl registry login --expiry-seconds 180 --access-token ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Build and push docker image
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          no-cache: true
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            LCD_URL=""
+
+      - name: Docker image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
