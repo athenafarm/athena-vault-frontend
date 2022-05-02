@@ -11,9 +11,36 @@ const Home: NextPage = () => {
       <div className="flex flex-col">
         <h1 className="ml-12 mt-2 text-5xl text-white">Vaults</h1>
         <div className="mx-12 my-8 flex justify-between">
-          <Vault></Vault>
-          <Vault></Vault>
-          <Vault></Vault>
+          <Vault
+            vault={''}
+            uses={''}
+            risk={''}
+            APY={''}
+            balance={''}
+            deposit_fee={''}
+            withdrawal_fee={''}
+            performance_fee={''}
+          ></Vault>
+          <Vault
+            vault={''}
+            uses={''}
+            risk={''}
+            APY={''}
+            balance={''}
+            deposit_fee={''}
+            withdrawal_fee={''}
+            performance_fee={''}
+          ></Vault>
+          <Vault
+            vault={''}
+            uses={''}
+            risk={''}
+            APY={''}
+            balance={''}
+            deposit_fee={''}
+            withdrawal_fee={''}
+            performance_fee={''}
+          ></Vault>
         </div>
       </div>
     </div>

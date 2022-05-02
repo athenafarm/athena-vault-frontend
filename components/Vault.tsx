@@ -7,7 +7,7 @@ export const Vault: React.FC<VaultProps> = ({
   uses = 'Anchor & Mirror',
   vault = 'Anchor-Mirror R1',
   withdrawal_fee = '0%',
-}) => {
+}: VaultProps) => {
   return (
     <div className="mx-5 flex w-full flex-col rounded-lg bg-tertiary p-5">
       <h2 className="text-2xl font-extrabold">{vault}</h2>
