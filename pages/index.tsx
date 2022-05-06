@@ -1,12 +1,32 @@
 import type { NextPage } from 'next'
+import styled, { ThemeProvider } from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import AthenaHead from '../components/AthenaHead'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/navbar/Navbar'
+import theme from '../styles/theme'
 
+const Button = styled.button`
+  color: ${(props) => props.theme.colors.grey};
+  background: ${(props) => props.theme.colors.tertiary};
+  font-family: Inconsolata;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+`
+const Buttonb = styled.button`
+  color: ${(props) => props.theme.colors.grey};
+  background: ${(props) => props.theme.colors.tertiary};
+  font-family: Zen dots;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border-radius: 3px;
+`
 const Home: NextPage = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <AthenaHead />
       <Navbar />
       <div className="flex flex-row">
@@ -58,7 +78,7 @@ const Home: NextPage = () => {
           <Image src="/blue-dot.svg" width={50} height={50} />
         </div>
       </div>
-    </>
+    </ThemeProvider>
   )
 }
 

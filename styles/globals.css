@@ -1,26 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   height: 100%;
   width: 100%;
   background-color: #121e2a;
 }
-.root,
-#root,
-#docs-root {
-  --primary: #00d7f5;
-  --secondary: #f7aad4;
-  --tertiary: #3c4858;
-  --darkgrey: #616161;
-  --grey: #979797;
-  --lightgrey: #aeaaaa;
-  --white: #fff;
-  --background: #121e2a;
-  --banner: #466382;
-  --header: #152230;
-}
+
