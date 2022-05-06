@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import AthenaHead from '../components/AthenaHead'
-import Navbar from '../components/navbar/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 import theme from '../styles/theme'
 import {
   Container,
@@ -18,7 +18,7 @@ import {
   Primary,
   Secondary,
   TextContainer,
-} from '../components/pages/index/styled/components'
+} from '../components/pages/index/components'
 
 const Home: NextPage = () => {
   return (

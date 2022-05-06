@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import AthenaHead from '../components/AthenaHead'
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 import { Vault } from '../components/Vault'
 
 const Home: NextPage = () => {

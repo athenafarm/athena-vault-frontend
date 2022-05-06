@@ -7,8 +7,11 @@ body {
   background-color: #121e2a;
   max-width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  font-family: 'Inconsolata,cursive';
 }
 a {
     color: inherit;
+    text-decoration: none;
 }
 

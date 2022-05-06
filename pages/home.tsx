@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import React from 'react'
 import AthenaHead from '../components/AthenaHead'
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 
 // TODO: Get deposits from API
 const deposits = [
