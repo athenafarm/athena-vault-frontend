@@ -5,7 +5,7 @@ import { Nav, LinkContainer, Ul, Li } from './styled/components'
 
 const Navbar = ({}) => (
   <Nav>
-    <LinkContainer className="w-full sm:block sm:w-auto" id="mobile-menu">
+    <LinkContainer id="mobile-menu">
       <Ul>
         <Li>
           <Link href="#">
