@@ -5,5 +5,10 @@ body {
   height: 100%;
   width: 100%;
   background-color: #121e2a;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+a {
+    color: inherit;
 }
 

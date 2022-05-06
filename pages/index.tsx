@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import AthenaHead from '../components/AthenaHead'
@@ -7,8 +7,10 @@ import Navbar from '../components/navbar/Navbar'
 import theme from '../styles/theme'
 import {
   Container,
-  DotsContainer,
+  DotsLower,
+  DotsUpper,
   GreyPiramidDot,
+  LowerDot,
   OpenApp,
   PinkPiramidDot,
   PinkUpperDot,
@@ -37,7 +39,7 @@ const Home: NextPage = () => {
             </Link>
           </OpenApp>
         </TextContainer>
-        <DotsContainer>
+        <DotsUpper w="50%" p="3rem">
           <GreyPiramidDot>
             <Image src="/grey-dot.svg" width={50} height={50} />
           </GreyPiramidDot>
@@ -50,19 +52,19 @@ const Home: NextPage = () => {
           <PinkPiramidDot>
             <Image src="/pink-dot.svg" width={50} height={50} />
           </PinkPiramidDot>
-        </DotsContainer>
+        </DotsUpper>
       </Container>
-      <div className="hidden flex-col lg:flex lg:px-12 lg:py-12">
-        <div className="text-right lg:pt-16">
+      <DotsLower w="auto" p="3rem">
+        <LowerDot mt="4rem" pl="0rem" pr="0rem" ta="right">
           <Image src="/blue-dot.svg" width={50} height={50} />
-        </div>
-        <div className="text-right lg:pt-12 lg:pr-64">
+        </LowerDot>
+        <LowerDot mt="4rem" pl="0rem" pr="16rem" ta="right">
           <Image src="/cyan-dot.svg" width={50} height={50} />
-        </div>
-        <div className="lg:pl-64">
+        </LowerDot>
+        <LowerDot mt="4rem" pl="16rem" pr="0rem" ta="start">
           <Image src="/blue-dot.svg" width={50} height={50} />
-        </div>
-      </div>
+        </LowerDot>
+      </DotsLower>
     </ThemeProvider>
   )
 }
