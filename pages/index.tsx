@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { ThemeProvider } from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
-import AthenaHead from '../components/AthenaHead'
+import AthenaHead from '../components/AthenaHead/AthenaHead'
 import Navbar from '../components/Navbar/Navbar'
 import theme from '../styles/theme'
 import {
@@ -18,7 +18,7 @@ import {
   Primary,
   Secondary,
   TextContainer,
-} from '../components/Pages/index/components'
+} from '../components/IndexLanding/components'
 
 const Home: NextPage = () => {
   return (

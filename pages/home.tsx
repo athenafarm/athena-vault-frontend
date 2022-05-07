@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import AthenaHead from '../components/AthenaHead'
+import AthenaHead from '../components/AthenaHead/AthenaHead'
 import { Card } from '../components/Card/Card'
 import { Deposits, Deposit } from '../components/Deposits/Deposits'
 import Header from '../components/Header/Header'
-import { Container } from '../components/Pages/home/components'
+import { PageContainer } from '../components/PageContainer/PageContainer'
 import Title from '../components/Title/Title'
 import theme from '../styles/theme'
 
@@ -32,12 +32,12 @@ const Home: NextPage = () => {
     <ThemeProvider theme={theme}>
       <AthenaHead />
       <Header selectedTab={'Home'} />
-      <Container>
+      <PageContainer>
         <Title>My Deposits</Title>
         <Card>
           <Deposits deposits={deposits} />
         </Card>
-      </Container>
+      </PageContainer>
     </ThemeProvider>
   )
 }
