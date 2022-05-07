@@ -14,6 +14,7 @@ export const WarnToast = styled.div`
   line-height: 1.25rem;
   color: ${(props) => props.theme.colors.white};
   background-color: ${(props) => props.theme.colors.banner};
+  margin-bottom: 1.25rem;
 
   @media (max-width: 768px) {
     padding-left: 0.5rem;

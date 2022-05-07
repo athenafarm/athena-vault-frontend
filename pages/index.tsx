@@ -18,7 +18,7 @@ import {
   Primary,
   Secondary,
   TextContainer,
-} from '../components/pages/index/components'
+} from '../components/Pages/index/components'
 
 const Home: NextPage = () => {
   return (
