@@ -1,6 +1,6 @@
-import classNames from 'classnames'
 import Link from 'next/link'
 import React from 'react'
+import { Button } from './styled/components'
 
 interface Props {
   content: 'Home' | 'Vaults' | 'Docs'
@@ -9,11 +9,7 @@ interface Props {
 
 const Tab: React.FC<Props> = ({ content, isSelected }) => (
   <Link href={`/${content.toLowerCase()}`}>
-    <button
-      className={classNames('pr-4 lg:pr-24', { 'text-darkgrey': !isSelected })}
-    >
-      {content}
-    </button>
+    <Button isSelected={isSelected}>{content}</Button>
   </Link>
 )
 
