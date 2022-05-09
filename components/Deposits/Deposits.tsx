@@ -8,7 +8,7 @@ export interface Deposit {
   APD: string
 }
 
-export const Deposits: React.FC<CardProps> = ({ deposits }) => {
+export const Deposits: React.FC<DepositProps> = ({ deposits }) => {
   return (
     <Content>
       <Row isHeader={true}>
@@ -31,6 +31,6 @@ export const Deposits: React.FC<CardProps> = ({ deposits }) => {
   )
 }
 
-interface CardProps {
+interface DepositProps {
   deposits: Deposit[]
 }

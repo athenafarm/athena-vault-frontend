@@ -22,7 +22,7 @@ export const WarnToast = styled.div`
   }
 `
 export const Navbar = styled.nav`
-  font-family: Inconsolata;
+  font-family: Inconsolata, cursive;
   display: flex;
   flex-direction: row;
   align-items: center;
