@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <AthenaHead />
-      <Navbar />
+      <Navbar id="navbar" />
       <Container>
         <TextContainer>
           <PinkUpperDot>
