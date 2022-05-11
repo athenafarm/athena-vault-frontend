@@ -6,7 +6,6 @@ import {
   WalletControllerChainOptions,
   WalletProvider,
 } from '@terra-money/wallet-provider'
-import Script from 'next/script'
 
 function MyApp({
   Component,

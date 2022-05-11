@@ -1,6 +1,6 @@
 import Tab from '../Tab/Tab'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import {
   Navbar,
@@ -11,32 +11,17 @@ import {
 import { ThemeProvider } from 'styled-components'
 import theme from '../../styles/theme'
 import { useWallet, WalletStatus } from '@terra-money/wallet-provider'
-// import Modal from 'react-modal'
+import Modal from 'react-modal'
 
-// Modal.setAppElement('#navbar')
-import Modal from '@mui/material/Modal'
-
-// const customStyles = {
-//   content: {
-//     top: '50%',
-//     left: '50%',
-//     right: 'auto',
-//     bottom: 'auto',
-//     marginRight: '-50%',
-//     transform: 'translate(-50%, -50%)',
-//   },
-// }
-
-const style = {
-  position: 'absolute' as const,
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
 }
 
 interface Props {
@@ -57,6 +42,10 @@ const Header: React.FC<Props> = ({ selectedTab }) => {
     disconnect,
   } = useWallet()
   const [modalIsOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    Modal.setAppElement('#navbar')
+  }, [])
 
   function openModal() {
     setIsOpen(true)
@@ -88,10 +77,11 @@ const Header: React.FC<Props> = ({ selectedTab }) => {
           Connect
         </ConnectButton>
         <Modal
-          open={modalIsOpen}
-          onClose={closeModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
         >
           {status === WalletStatus.WALLET_NOT_CONNECTED && (
             <>
